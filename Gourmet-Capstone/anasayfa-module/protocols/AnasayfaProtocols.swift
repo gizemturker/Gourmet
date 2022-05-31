@@ -19,7 +19,6 @@ protocol PresenterToInteractorAnasayfaProtocol {
     var anasayfaPresenter:InteractorToPresenterAnasayfaProtocol? {get set}
     
     func tumYemekleriAl()
-  
 }
 
 protocol InteractorToPresenterAnasayfaProtocol {

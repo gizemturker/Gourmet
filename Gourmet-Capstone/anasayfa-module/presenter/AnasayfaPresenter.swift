@@ -10,9 +10,7 @@ import Foundation
 class AnasayfaPresenter : ViewToPresenterAnasayfaProtocol {
     var anasayfaInteractor: PresenterToInteractorAnasayfaProtocol?
     var anasayfaView: PresenterToViewAnasayfaProtocol?
-    
-    
-    
+
     func yemekleriYukle() {
         anasayfaInteractor?.tumYemekleriAl()
     }

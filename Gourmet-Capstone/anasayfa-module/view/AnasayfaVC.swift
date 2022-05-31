@@ -9,18 +9,11 @@ import UIKit
 
 class AnasayfaVC : UIViewController, UISearchBarDelegate {
     
-
-    // tableview ekleme
-    
     @IBOutlet weak var yemeklerTableView: UITableView!
     
-
     var yemeklerListe = [Yemekler]()
-    
     var anasayfaPresenterNesnesi:ViewToPresenterAnasayfaProtocol?
     
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +28,7 @@ class AnasayfaVC : UIViewController, UISearchBarDelegate {
         
         
         AnasayfaRouter.createModule(ref: self)
-        
-       // anasayfaPresenterNesnesi?.yemekleriYukle()
-        
+
         yemeklerTableView.separatorColor = UIColor(white: 0.95, alpha: 1)
         
        
@@ -45,21 +36,10 @@ class AnasayfaVC : UIViewController, UISearchBarDelegate {
         
         let appearance = UINavigationBarAppearance()
         
-        // backroundcolor
-        
         appearance.backgroundColor = UIColor(named: "mainColor")
-        
-        // gourmet header color
-        
         appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "fontColor1")!, NSAttributedString.Key.font: UIFont(name: "Ubuntu-Regular", size: 22)!]
-        
-        // statusbar
         navigationController?.navigationBar.barStyle = .black
-        
-        // real color pallette
-        
         navigationController?.navigationBar.isTranslucent = true
-        
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance

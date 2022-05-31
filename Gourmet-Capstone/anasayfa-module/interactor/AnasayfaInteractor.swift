@@ -22,12 +22,9 @@ class AnasayfaInteractor : PresenterToInteractorAnasayfaProtocol {
             }
             
             do {
-               
                 let cevap = try JSONDecoder().decode(YemeklerCevap.self, from: data!)
                 if let liste = cevap.yemekler {
-                    
                     self.anasayfaPresenter?.presenteraVeriGonder(yemeklerListesi: liste)
-
                 }
                 
                 
@@ -35,11 +32,9 @@ class AnasayfaInteractor : PresenterToInteractorAnasayfaProtocol {
                 
                     print(error.localizedDescription)
                 //print(String(describing: error)) // <- ✅ Use this for debuging!
-            }
+                }
             
-        }.resume()
+            }.resume()
         
     }
-
-    
 }
