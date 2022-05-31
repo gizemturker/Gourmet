@@ -12,7 +12,6 @@ class YemekKayitPresenter : ViewToPresenterYemekKayitProtocol {
     
     var yemekKayitInteractor: PresenterToInteractorYemekKayitProtocol?
     
-    
     func ekle(yemek_adi: String, yemek_resim_adi: String, yemek_fiyat: Int, yemek_adet: Int, kullanici_adi: String) {
         yemekKayitInteractor?.yemekEkle(yemek_adi: yemek_adi, yemek_resim_adi: yemek_resim_adi, yemek_fiyat: yemek_fiyat, yemek_adet: yemek_adet, kullanici_adi: kullanici_adi)
     }

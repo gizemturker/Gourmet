@@ -11,9 +11,7 @@ class SepetDetayVC: UIViewController, UITableViewDelegate {
 
 
     @IBOutlet weak var sepetTableView: UITableView!
-    
-    
-    
+ 
     var sepetYemekListe = [Sepet_Yemekler]()
     
     var sepetPresenterNesnesi:ViewToPresenterSepetProtocol?
