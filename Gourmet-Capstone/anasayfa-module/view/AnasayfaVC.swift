@@ -73,8 +73,6 @@ extension AnasayfaVC : UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    // hücrelerin kopyalanması sayı kadar çalışır. sırayla indeks bilgisi verir
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let yemek = yemeklerListe[indexPath.row]
         
@@ -116,8 +114,6 @@ extension AnasayfaVC : UITableViewDelegate, UITableViewDataSource {
                 cell.layer.borderWidth = 10
                 cell.layer.cornerRadius = 1
                 cell.clipsToBounds = true
-       
-
     }
     
 }
@@ -137,24 +133,3 @@ extension AnasayfaVC : PresenterToViewAnasayfaProtocol {
     }
 }
     
- /*   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let silAction = UIContextualAction(style: .destructive, title: "Sil"){ (action,view,bool) in
-            let yemek = self.yemeklerListe[indexPath.row]
-            
-            let alert = UIAlertController(title: "Silme İşlemi", message: "\(yemek.yemek_adi!) silinsin mi ?", preferredStyle: .alert)
-            
-            let iptalAction = UIAlertAction(title: "İptal", style: .cancel){ action in }
-            alert.addAction(iptalAction)
-            
-            let evetAction = UIAlertAction(title: "Evet", style: .destructive){ action in
-                self.anasayfaPresenterNesnesi?.sil(yemek?.yemek_adi!)
-            }
-            alert.addAction(evetAction)
-            
-            self.present(alert, animated: true)
-            
-        }
-        
-        return UISwipeActionsConfiguration(actions: [silAction])
-    } */
