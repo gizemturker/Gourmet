@@ -121,7 +121,6 @@
         <!--Yemek Detay-->
         <scene sceneID="Qk3-uG-5pl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D5L-8S-t4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="C4A-sL-7Fa" customClass="YemekDetayVC" customModule="Gourmet_Capstone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fih-3G-xN8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -217,6 +216,7 @@
                         <outlet property="stepper" destination="eZQ-ob-DU6" id="kpW-E6-2ib"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D5L-8S-t4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1657.9710144927537" y="77.678571428571431"/>
         </scene>
@@ -401,7 +401,7 @@
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     <connections>
-                                        <action selector="buttonSepetiOnayla:" destination="bFF-dC-oIv" eventType="touchUpInside" id="DBP-xQ-dt0"/>
+                                        <action selector="buttonSepetiOnayla:" destination="bFF-dC-oIv" eventType="touchUpInside" id="Xxk-Gz-BtG"/>
                                     </connections>
                                 </button>
                                 <prototypes>
