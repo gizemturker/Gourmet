@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C4066D5E283ED38E00323401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4066D5D283ED38E00323401 /* Assets.xcassets */; };
+		C48098A92846150400C8A30A /* SepetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48098A82846150400C8A30A /* SepetTableViewCell.swift */; };
 		C4DE3054283D70DB00B383E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DE3053283D70DB00B383E0 /* AppDelegate.swift */; };
 		C4DE3056283D70DB00B383E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DE3055283D70DB00B383E0 /* SceneDelegate.swift */; };
 		C4DE3058283D70DB00B383E0 /* AnasayfaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DE3057283D70DB00B383E0 /* AnasayfaVC.swift */; };
@@ -38,13 +39,12 @@
 		C4F0332E2842113600F79FB8 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0332D2842113600F79FB8 /* SearchRouter.swift */; };
 		C4F033302842114A00F79FB8 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0332F2842114A00F79FB8 /* SearchInteractor.swift */; };
 		C4F033322842115800F79FB8 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F033312842115800F79FB8 /* SearchPresenter.swift */; };
-		C4F0333428426BBA00F79FB8 /* SepetYemekler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0333328426BBA00F79FB8 /* SepetYemekler.swift */; };
-		C4F0333628426BC900F79FB8 /* SepetYemeklerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0333528426BC900F79FB8 /* SepetYemeklerCevap.swift */; };
+		C4F0333428426BBA00F79FB8 /* Sepet_Yemekler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0333328426BBA00F79FB8 /* Sepet_Yemekler.swift */; };
+		C4F0333628426BC900F79FB8 /* Sepet_YemeklerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0333528426BC900F79FB8 /* Sepet_YemeklerCevap.swift */; };
 		C4F0337628427A3D00F79FB8 /* SepetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0337528427A3D00F79FB8 /* SepetRouter.swift */; };
 		C4F0337828427A6C00F79FB8 /* SepetProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0337728427A6C00F79FB8 /* SepetProtocols.swift */; };
 		C4F0337A28427A8200F79FB8 /* SepetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0337928427A8200F79FB8 /* SepetInteractor.swift */; };
 		C4F0337C28427A9600F79FB8 /* SepetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0337B28427A9600F79FB8 /* SepetPresenter.swift */; };
-		C4F0337F2842A03700F79FB8 /* SepetTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0337E2842A03700F79FB8 /* SepetTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		C4066D5D283ED38E00323401 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C48098A82846150400C8A30A /* SepetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SepetTableViewCell.swift; path = ../protocols/SepetTableViewCell.swift; sourceTree = "<group>"; };
 		C4DE3050283D70DB00B383E0 /* Gourmet-Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gourmet-Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4DE3053283D70DB00B383E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4DE3055283D70DB00B383E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,13 +100,12 @@
 		C4F0332D2842113600F79FB8 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		C4F0332F2842114A00F79FB8 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		C4F033312842115800F79FB8 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
-		C4F0333328426BBA00F79FB8 /* SepetYemekler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetYemekler.swift; sourceTree = "<group>"; };
-		C4F0333528426BC900F79FB8 /* SepetYemeklerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetYemeklerCevap.swift; sourceTree = "<group>"; };
+		C4F0333328426BBA00F79FB8 /* Sepet_Yemekler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sepet_Yemekler.swift; sourceTree = "<group>"; };
+		C4F0333528426BC900F79FB8 /* Sepet_YemeklerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sepet_YemeklerCevap.swift; sourceTree = "<group>"; };
 		C4F0337528427A3D00F79FB8 /* SepetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetRouter.swift; sourceTree = "<group>"; };
 		C4F0337728427A6C00F79FB8 /* SepetProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetProtocols.swift; sourceTree = "<group>"; };
 		C4F0337928427A8200F79FB8 /* SepetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetInteractor.swift; sourceTree = "<group>"; };
 		C4F0337B28427A9600F79FB8 /* SepetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetPresenter.swift; sourceTree = "<group>"; };
-		C4F0337E2842A03700F79FB8 /* SepetTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +209,6 @@
 				C4F032F428403F4600F79FB8 /* interactor */,
 				C4F032F328403F3D00F79FB8 /* presenter */,
 				C4F032F228403F3200F79FB8 /* view */,
-				C4DE3057283D70DB00B383E0 /* AnasayfaVC.swift */,
 			);
 			path = "anasayfa-module";
 			sourceTree = "<group>";
@@ -217,6 +216,7 @@
 		C4F032F228403F3200F79FB8 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				C4DE3057283D70DB00B383E0 /* AnasayfaVC.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -261,7 +261,6 @@
 				C4F032FD2840D91F00F79FB8 /* interactor */,
 				C4F032FC2840D90F00F79FB8 /* presenter */,
 				C4F032FB2840D90900F79FB8 /* view */,
-				C4F032DC283FB4F100F79FB8 /* YemekDetayVC.swift */,
 			);
 			path = "yemekdetay-module";
 			sourceTree = "<group>";
@@ -276,6 +275,7 @@
 		C4F032FB2840D90900F79FB8 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				C4F032DC283FB4F100F79FB8 /* YemekDetayVC.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -423,8 +423,8 @@
 			children = (
 				C4F032E4283FD48200F79FB8 /* Yemekler.swift */,
 				C4F0332328412C3100F79FB8 /* YemeklerCevap.swift */,
-				C4F0333328426BBA00F79FB8 /* SepetYemekler.swift */,
-				C4F0333528426BC900F79FB8 /* SepetYemeklerCevap.swift */,
+				C4F0333328426BBA00F79FB8 /* Sepet_Yemekler.swift */,
+				C4F0333528426BC900F79FB8 /* Sepet_YemeklerCevap.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -440,7 +440,7 @@
 		C4F0337D2842A01600F79FB8 /* tableview */ = {
 			isa = PBXGroup;
 			children = (
-				C4F0337E2842A03700F79FB8 /* SepetTableView.swift */,
+				C48098A82846150400C8A30A /* SepetTableViewCell.swift */,
 			);
 			path = tableview;
 			sourceTree = "<group>";
@@ -602,17 +602,17 @@
 				C4F0332428412C3100F79FB8 /* YemeklerCevap.swift in Sources */,
 				C4DE3054283D70DB00B383E0 /* AppDelegate.swift in Sources */,
 				C4F0337C28427A9600F79FB8 /* SepetPresenter.swift in Sources */,
+				C48098A92846150400C8A30A /* SepetTableViewCell.swift in Sources */,
 				C4F0337628427A3D00F79FB8 /* SepetRouter.swift in Sources */,
 				C4DE3056283D70DB00B383E0 /* SceneDelegate.swift in Sources */,
-				C4F0337F2842A03700F79FB8 /* SepetTableView.swift in Sources */,
 				C4F0337A28427A8200F79FB8 /* SepetInteractor.swift in Sources */,
-				C4F0333628426BC900F79FB8 /* SepetYemeklerCevap.swift in Sources */,
+				C4F0333628426BC900F79FB8 /* Sepet_YemeklerCevap.swift in Sources */,
 				C4F033182840F53600F79FB8 /* YemekKayitInteractor.swift in Sources */,
 				C4F033302842114A00F79FB8 /* SearchInteractor.swift in Sources */,
 				C4F033142840DF2900F79FB8 /* YemekKayitProtocols.swift in Sources */,
 				C4F033222840FEFC00F79FB8 /* AnasayfaPresenter.swift in Sources */,
 				C4F032DD283FB4F100F79FB8 /* YemekDetayVC.swift in Sources */,
-				C4F0333428426BBA00F79FB8 /* SepetYemekler.swift in Sources */,
+				C4F0333428426BBA00F79FB8 /* Sepet_Yemekler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

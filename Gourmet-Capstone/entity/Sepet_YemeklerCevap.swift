@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SepetYemeklerCevap : Codable {
-    var sepet_yemekler:[SepetYemekler]?
+class Sepet_YemeklerCevap : Codable {
+    var sepet_yemekler:[Sepet_Yemekler]?
     var success:Int?
 }

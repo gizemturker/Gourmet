@@ -14,7 +14,7 @@ class SepetDetayRouter : PresenterToRouterSepetProtocol {
         ref.sepetPresenterNesnesi = presenter
         //Presenter
         ref.sepetPresenterNesnesi?.sepetInteractor = SepetInteractor()
-        ref.sepetPresenterNesnesi?.sepetView = SepetInteractor() as! PresenterToViewSepetProtocol
+        ref.sepetPresenterNesnesi?.sepetView = ref
         //Interactor
         ref.sepetPresenterNesnesi?.sepetInteractor?.sepetPresenter = presenter
     }

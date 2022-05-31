@@ -17,6 +17,7 @@ class YemekDetayVC: UIViewController {
     @IBOutlet weak var labelX: UILabel!
     
     var yemek:Yemekler?
+    var sepetYemek:Sepet_Yemekler?
     var yemekKayitPresenterNesnesi:ViewToPresenterYemekKayitProtocol?
     
 
@@ -25,9 +26,10 @@ class YemekDetayVC: UIViewController {
         super.viewDidLoad()
         
         
-        YemekKayitRouter.createModule(ref: self)
+      
 
         if let y = yemek {
+            self.navigationItem.title = y.yemek_adi
             detayYemek.text = y.yemek_adi
             detayFiyat.text = "\(y.yemek_fiyat!) ₺"
             detayImage.image = UIImage(named: y.yemek_resim_adi!)
@@ -35,26 +37,35 @@ class YemekDetayVC: UIViewController {
             detayImage.kf.setImage(with: url)
             
         }
-
+        
+        YemekKayitRouter.createModule(ref: self)
+        
     }
     
     @IBAction func addCartButton(_ sender: Any) {
-
-        yemekKayitPresenterNesnesi?.ekle(yemek_adi: (yemek?.yemek_adi)!, yemek_resim_adi: (yemek?.yemek_resim_adi)!, yemek_fiyat: Int((yemek?.yemek_fiyat)!)!, yemek_adet: Int(labelX.text!)!, kullanici_adi: "gizemturker")
+        
+    
+        if let y = yemek {
+            yemekKayitPresenterNesnesi?.ekle(yemek_adi: y.yemek_adi!, yemek_resim_adi: y.yemek_resim_adi!, yemek_fiyat: Int(y.yemek_fiyat!)! , yemek_adet: Int(labelX.text!)!, kullanici_adi: "gizemturker")
+              }
         
         // .sepeteEkle yemekadi resim fiyat yemek adet kullanıcı adı verilecek.
         
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    @IBAction func stepperButton(_ sender: UIStepper) {
+        
+        labelX.text = String(Int(sender.value))
+    }
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toSepet" {
             _ = sender as? Yemekler
             _ = segue.destination as! SepetDetayVC
         }
     }
-    
+    */
 
     
 }

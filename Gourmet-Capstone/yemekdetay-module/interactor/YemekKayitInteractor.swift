@@ -10,6 +10,10 @@ import Foundation
 
 
 class YemekKayitInteractor : PresenterToInteractorYemekKayitProtocol{
+    
+    var yemekKayitPresenter: PresenterToInteractorYemekKayitProtocol?
+    
+    
     func yemekEkle(yemek_adi: String, yemek_resim_adi: String, yemek_fiyat: Int, yemek_adet: Int, kullanici_adi: String) {
         var istek = URLRequest(url: URL(string: "http://kasimadalan.pe.hu/yemekler/sepeteYemekEkle.php")!)
         istek.httpMethod = "POST"
@@ -23,23 +27,13 @@ class YemekKayitInteractor : PresenterToInteractorYemekKayitProtocol{
                 return
             }
             do{
-                if let json = try JSONSerialization.jsonObject(with: data!,options: []) as? [String:Any] {
+                let json = try JSONSerialization.jsonObject(with: data!)
                     print(json)
-                }
+                
             }catch{
                 print(error.localizedDescription)
             }
         }.resume()
     }
-    
-    func yemekSil(yemek_id: Int, kullanici_adi: String) {
-        print("sdfsjkj")
-    }
-    
-    
-    var yemekKayitPresenter: PresenterToInteractorYemekKayitProtocol?
-    
-    var YemekKayitPresenter: InteractorToPresenterYemekKayitProtocol?
-
-    }
+}
 

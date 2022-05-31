@@ -14,22 +14,22 @@ protocol ViewToPresenterSepetProtocol {
     var sepetView:PresenterToViewSepetProtocol? {get set}
     
     func sepetYukle(kullanici_adi:String)
-    func sepetSil(sepet_yemek_id:Int,kullanici_adi:String)
+    func sepetYemekSil(sepet_yemek_id:Int,kullanici_adi:String)
 }
 
 protocol PresenterToInteractorSepetProtocol {
     var sepetPresenter:InteractorToPresenterSepetProtocol? {get set}
     
-    func yukle(kullanici_adi:String)
-    func sil(sepet_yemek_id:Int,kullanici_adi:String)
+    func sepetYemekler(kullanici_adi:String)
+    func yemekSil(sepet_yemek_id:Int,kullanici_adi:String)
 }
 
 protocol InteractorToPresenterSepetProtocol {
-    func presenteraVeriGonder(sepetListesi:Array<SepetYemekler>)
+    func presenteraVeriGonder(sepetListesi:Array<Sepet_Yemekler>)
 }
 
 protocol PresenterToViewSepetProtocol {
-    func vieweVeriGonder(sepetListesi:Array<SepetYemekler>)
+    func vieweVeriGonder(sepetListesi:Array<Sepet_Yemekler>)
 }
 
 protocol PresenterToRouterSepetProtocol {

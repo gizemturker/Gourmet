@@ -2,14 +2,19 @@
 //  SepetTableViewCell.swift
 //  Gourmet-Capstone
 //
-//  Created by Gizem Turker on 28.05.2022.
+//  Created by Gizem Turker on 31.05.2022.
 //
 
 import UIKit
 
-class SepetTableView: UITableViewCell {
+class SepetTableViewCell: UITableViewCell {
 
-    
+   
+    @IBOutlet weak var sepetYemekAdi: UILabel!
+    @IBOutlet weak var sepetYemekFiyat: UILabel!
+    @IBOutlet weak var sepetYemekAdet: UILabel!
+    @IBOutlet weak var YemekImageView: UIImageView!
+    @IBOutlet weak var sepetHucreArkaPlan: UIView!
     
     let cellSpacingHeight: CGFloat = 5
     
@@ -24,9 +29,4 @@ class SepetTableView: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
-        contentView.layer.cornerRadius = 5
-    }
 }

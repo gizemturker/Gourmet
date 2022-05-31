@@ -12,13 +12,13 @@ protocol ViewToPresenterYemekKayitProtocol {
     var yemekKayitView:PresenterToViewYemekKayitProtocol? {get set}
     
     func ekle(yemek_adi:String,yemek_resim_adi:String,yemek_fiyat:Int,yemek_adet:Int,kullanici_adi:String)
-    func sil(yemek_id:Int,kullanici_adi:String)
+   
 }
 
 protocol PresenterToInteractorYemekKayitProtocol {
     var yemekKayitPresenter:PresenterToInteractorYemekKayitProtocol? {get set}
     func yemekEkle(yemek_adi:String,yemek_resim_adi:String,yemek_fiyat:Int,yemek_adet:Int,kullanici_adi:String)
-    func yemekSil(yemek_id:Int,kullanici_adi:String)
+   
 }
 
 protocol InteractorToPresenterYemekKayitProtocol {

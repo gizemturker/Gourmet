@@ -7,91 +7,86 @@
 
 import UIKit
 
-class SepetDetayVC: UIViewController {
+class SepetDetayVC: UIViewController, UITableViewDelegate {
 
-    @IBOutlet weak var tableView: UITableViewCell!
+
+    @IBOutlet weak var sepetTableView: UITableView!
     
-    var sepetYemekListe = [SepetYemekler]()
+    
+    
+    var sepetYemekListe = [Sepet_Yemekler]()
+    
     var sepetPresenterNesnesi:ViewToPresenterSepetProtocol?
     
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-
-            
-            
-            // SepetRouter.createModule(ref: self)
+        
+        sepetTableView.delegate = self
+        sepetTableView.dataSource = self
+        
+        SepetDetayRouter.createModule(ref: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        sepetPresenterNesnesi?.sepetView.self
+        sepetPresenterNesnesi?.sepetYukle(kullanici_adi: "gizemturker")
     }
     
+    @IBAction func buttonSepetiOnayla(_ sender: Any) {
 
-    @IBOutlet weak var orderButton: UILabel!
+    }
 }
 
-extension SepetDetayVC : UITableViewDelegate, UITableViewDataSource {
+extension SepetDetayVC : PresenterToViewSepetProtocol {
+    
+    func vieweVeriGonder(sepetListesi sepetYemeklerListesi: Array<Sepet_Yemekler>) {
+        self.sepetYemekListe = sepetYemeklerListesi
+        DispatchQueue.main.async {
+            self.sepetTableView.reloadData()
+        }
+    }
+}
+
+extension SepetDetayVC : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sepetYemekListe.count
-        
     }
     
-    // hücrelerin kopyalanması sayı kadar çalışır. sırayla indeks bilgisi verir
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let sepet = sepetYemekListe[indexPath.row]
+        let hucre = tableView.dequeueReusableCell(withIdentifier: "sepetHucre", for: indexPath) as! SepetTableViewCell
         
-        
-    // tableviewcelle erişmek istiyor id ve class ı kullanarak
-        
-        let hucre = tableView.dequeueReusableCell(withIdentifier: "toSepetDetayHucre", for: indexPath) as! TableViewCell
-        
-        hucre.yemekAdıLabel.text = sepet.yemek_adi
-        hucre.yemekFiyatıLabel.text = "\(sepet.yemek_fiyat!) ₺"
+        hucre.sepetYemekAdi.text = sepet.yemek_adi
+        hucre.sepetYemekFiyat.text = "\(sepet.yemek_fiyat!) ₺"
+        hucre.YemekImageView.image = UIImage(named: sepet.yemek_resim_adi!)
+        hucre.sepetYemekAdet.text = "\(sepet.yemek_siparis_adet!)"
         let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(sepet.yemek_resim_adi!)")
-        hucre.yemekResimImageView.kf.setImage(with: url)
-
+        hucre.YemekImageView.kf.setImage(with: url)
+        
         hucre.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        hucre.contentView.layer.cornerRadius = 10.0
+        hucre.sepetHucreArkaPlan.layer.cornerRadius = 10.0
+        
         return hucre
     }
     
-
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        
-        cell.backgroundColor = UIColor.white
-                cell.layer.borderColor = UIColor.secondarySystemBackground.cgColor
-                cell.layer.borderWidth = 10
-                cell.layer.cornerRadius = 1
-                cell.clipsToBounds = true
-       
-
-    }
-    
-}
-
-    
- /*   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let silAction = UIContextualAction(style: .destructive, title: "Sil"){ (action,view,bool) in
-            let yemek = self.yemeklerListe[indexPath.row]
+            let silAction = UIContextualAction(style: .destructive, title: "Sil"){ (action,view,void) in
+            let sepet = self.sepetYemekListe[indexPath.row]
             
-            let alert = UIAlertController(title: "Silme İşlemi", message: "\(yemek.yemek_adi!) silinsin mi ?", preferredStyle: .alert)
-            
+            let alert = UIAlertController(title: "Silme İşlemi", message: "\(sepet.yemek_adi!) silinsin mi?", preferredStyle: .alert)
             let iptalAction = UIAlertAction(title: "İptal", style: .cancel){ action in }
             alert.addAction(iptalAction)
             
             let evetAction = UIAlertAction(title: "Evet", style: .destructive){ action in
-                self.anasayfaPresenterNesnesi?.sil(yemek?.yemek_adi!)
-            }
+                self.sepetPresenterNesnesi?.sepetYemekSil(sepet_yemek_id: Int(sepet.sepet_yemek_id)!, kullanici_adi: sepet.kullanici_adi!)
+        }
             alert.addAction(evetAction)
-            
             self.present(alert, animated: true)
-            
         }
         
         return UISwipeActionsConfiguration(actions: [silAction])
-    } */
+    }
+    
+}

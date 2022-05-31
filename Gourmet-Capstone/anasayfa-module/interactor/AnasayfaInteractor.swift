@@ -8,16 +8,7 @@
 import Foundation
 
 class AnasayfaInteractor : PresenterToInteractorAnasayfaProtocol {
-    func yemekAra(aramaKelimesi: String) {
-        print("dsfsdf")
-    }
-    
-    func yemekSil(yemek_id: Int) {
-        print("sdfsdf")
-    }
-    
   
-    
     var anasayfaPresenter: InteractorToPresenterAnasayfaProtocol?
     
     func tumYemekleriAl() {
