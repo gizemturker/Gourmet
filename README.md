@@ -1,6 +1,23 @@
 # Gourmet-Capstone Projects
 
 
+VIPER Architecture Design
+
+•	![image](https://user-images.githubusercontent.com/17044304/173926717-2a9c8880-2754-494b-98f1-232418d30f83.png)
+MainTabBarViewController
+
+Setting HomeViewController TableView
+
+Setting home TableViewCell
+
+Sending URL Requests and Parsing JSON response
+
+Using Extensions
+
+Consuming API To Fetch Data for each Section
+
+Refactoring Models
+
 
 
 
